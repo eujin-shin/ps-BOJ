@@ -1,0 +1,124 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Q10039",
+      "request": "launch",
+      "mainClass": "Q10039",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q2839",
+      "request": "launch",
+      "mainClass": "Q2839",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q10809",
+      "request": "launch",
+      "mainClass": "Q10809",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q15596",
+      "request": "launch",
+      "mainClass": "Q15596",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q8958_1",
+      "request": "launch",
+      "mainClass": "Q8958_1",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q8958",
+      "request": "launch",
+      "mainClass": "Q8958",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q2577",
+      "request": "launch",
+      "mainClass": "Q2577",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q10951",
+      "request": "launch",
+      "mainClass": "Q10951",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q2439",
+      "request": "launch",
+      "mainClass": "Q2439",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q11022",
+      "request": "launch",
+      "mainClass": "Q11022",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q2742",
+      "request": "launch",
+      "mainClass": "Q2742",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q15552",
+      "request": "launch",
+      "mainClass": "Q15552",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Q2739",
+      "request": "launch",
+      "mainClass": "Q2739",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "java_eclipse"
+    },
+    {
+      "type": "java",
+      "name": "Launch HelloWorld",
+      "request": "launch",
+      "mainClass": "HelloWorld",
+      "projectName": "java_eclipse"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "/Users/shineujin/Documents/coding/Baekjoon/java",
+      "environment": [],
+      "program": "/Users/shineujin/Documents/coding/Baekjoon/java/build/Debug/outDebug",
+      "internalConsoleOptions": "openOnSessionStart",
+      "MIMode": "lldb",
+      "miDebuggerPath": "/usr/bin/lldb",
+      "externalConsole": false
+    }
+  ]
+}
