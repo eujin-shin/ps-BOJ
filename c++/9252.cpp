@@ -2,30 +2,35 @@
 #include <string>
 using namespace std;
 
-string lcs[7] = {0, };
+int map[1001][1001]={0, }; 
+char res[1001];
+
 
 int main() {
-  string str1, str2;
-  cout<<".\n";
-  cin>>str1>>str2;
-  int len1 = str1.length(), len2 = str2.length();
-  char c1, c2;
-  for(int i=0; i<len1; i++) {
-    c1 = str1[i];
-    for(int j=0; j<len2; j++) {
-      c2 = str2[j];
-      if(c1==c2) {
-        for(int h=j; h<len2; h++) {
-          lcs[h] = lcs[h] + c1;
-        }
-        str2[j] = '.';
-        break;
-      }
+  string a, b;
+  int n, x, y;
+  cin>>a>>b;
+  x=a.size(); y=b.size();
+  for(int i=1; i<=x; i++) {
+    for(int j=1; j<=y; j++) {
+      if(a[i-1]==b[j-1]) map[i][j]=map[i-1][j-1]+1;
+      else map[i][j]=((map[i-1][j]>map[i][j-1]) ? (map[i-1][j]) : (map[i][j-1]));
     }
   }
-  cout<<lcs[len2].length()<<'\n';
-  if(lcs[len2].length()!=0) {
-    cout<<lcs[len2]<<'\n';
+  n=map[x][y];
+  for(int i=n; i>0; i--) {
+    while(1) {
+      if(map[x-1][y]==map[x][y]) x--;
+      else if(map[x][y-1]==map[x][y]) y--;
+      else break;
+    }
+    res[i]=a[x-1];
+    x--; y--;
+  }
+  cout<<n<<'\n';
+  for(int i=1; i<=n; i++) {
+    cout<<res[i];
+    if(i==n) cout<<'\n';
   }
   return 0;
 }
