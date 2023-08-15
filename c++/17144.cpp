@@ -1,7 +1,9 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int room[52][52] = {0, };
+int tmp[52][52]={0, };
 
 int x_move[4] = {1, 0, -1, 0};
 int y_move[4] = {0, 1, 0, -1};
@@ -14,7 +16,7 @@ void Spread(int x, int y, int r, int c) {
     if(next_x>c || next_x<1 || next_y>r || next_y<1) continue;
     if(room[next_x][next_y]>=0) {
       count++;
-      room[next_x][next_y] = room[next_x][next_y] + amount;
+      tmp[next_x][next_y] += amount;
     }
   }
   room[x][y] = room[x][y] - (amount*count);
@@ -39,6 +41,12 @@ int main() {
         if(room[x][y]>0) {
           Spread(x, y, r, c);
         }
+      }
+    }
+    for(int y=1; y<=r; y++) {
+      for(int x=1; x<=c; x++) {
+        room[x][y]+=tmp[x][y];
+        tmp[x][y]=0;
       }
     }
     x = 2; y = air-1; dir = 0; next = 0;
