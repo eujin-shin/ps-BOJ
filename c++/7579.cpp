@@ -1,39 +1,33 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-typedef struct {
-  int m, c;
-} APP;
-
-int dp[10002][102]={0, };
-APP arr[101]={0, };
-
-int GetDP(int M, int N) {
-  int sum=0, c=0, cc, cm;
-  while(1) {
-    for(int i=1; i<=N; i++) {
-      cc=arr[i].c; cm=arr[i].m;
-      if(cc>=c && dp[c-cc][i-1]+cm>sum) {
-        sum=dp[c-cc][i-1]+cm;
-      }
-      dp[c][i]=sum;
-    }
-    if(sum>=M) break;
-    c++;
-  }
-  return c;
-}
+vector <int> v[2];
+int dp[10001][101]={0, };
+int ans=-1;
 
 int main() {
-  ios_base::sync_with_stdio(false);
-  int N, M;
-  cin>>N>>M;
-  for(int i=1; i<=N; i++) {
-    cin>>arr[i].m;
+  int n, m, t, c=0;
+  cin>>n>>m;
+  for(int i=0; i<2; i++) {
+    for(int j=0; j<n; j++) {
+      cin>>t; v[i].push_back(t);
+      if(i==1) c+=t;
+    }
   }
-  for(int i=1; i<=N; i++) {
-    cin>>arr[i].c;
+  for(int i=0; i<=c; i++) {
+    for(int j=1; j<=n; j++) {
+      if(v[1][j-1]>i) {
+        dp[i][j]=dp[i][j-1];
+      } else {
+        dp[i][j]=dp[i-v[1][j-1]][j-1]+v[0][j-1];
+        if(dp[i][j]<dp[i][j-1]) dp[i][j]=dp[i][j-1];
+      }
+    }
+    if(dp[i][n]>=m) {
+      ans=i; break;
+    }
   }
-  cout<<GetDP(M, N)<<'\n';
+  cout<<ans<<'\n';
   return 0;
 }
