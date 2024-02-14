@@ -21,6 +21,7 @@ int main() {
     memset(visit, 0, sizeof(visit));
     visit[i]=1; arr[i]=n-1;
     for(int j=0; j<up[i].size(); j++) {
+      if(visit[up[i][j]]!=0) continue;
       uq.push(up[i][j]); visit[up[i][j]]=1;
     }
     while(!uq.empty()) {
@@ -33,6 +34,7 @@ int main() {
       }
     }
     for(int j=0; j<down[i].size(); j++) {
+      if(visit[down[i][j]]!=0) continue;
       dq.push(down[i][j]); visit[down[i][j]]=1;
     }
     while(!dq.empty()) {
