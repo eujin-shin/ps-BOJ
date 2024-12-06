@@ -13,15 +13,9 @@ int main() {
     cin>>map[y];
   }
   bool isAble = true;
-  for(int y = 0; y < r; y++) {
-    for(int x = 0; x < c; x++) {
+  for(int y = 0; y < r && isAble; y++) {
+    for(int x = 0; x < c && isAble; x++) {
       isAble = checkWolf(x, y);
-      if(!isAble) {
-        break;
-      }
-    }
-    if(!isAble) {
-      break;
     }
   }
   if(isAble) {
