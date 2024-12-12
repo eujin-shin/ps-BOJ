@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#define OFFSET 1000
+#define OFFSET 500
 using namespace std;
 
-int map[2000][2000] = {0, };
+int map[1001][1001] = {0, };
 
 int main() {
   string moves;
