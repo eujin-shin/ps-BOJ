@@ -1,7 +1,3 @@
 function solution(n) {
-    const array = [];
-    for(let i = 1; i <= n; i += 2) {
-        array.push(i);
-    }
-    return array;
+    return Array.from({ length: (n % 2 === 0 ? n : n + 1) / 2}, (_, i) => i * 2 + 1)
 }
