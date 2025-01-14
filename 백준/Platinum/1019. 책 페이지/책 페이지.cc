@@ -10,8 +10,6 @@ void addResult(int len, int num, bool exceptLast);
 void updateAdd(int len, ll next);
 void print();
 
-void count(int x);
-
 int main() {
   ll n;
   cin>>n;
@@ -42,7 +40,6 @@ int main() {
     startFromZero = true;
   }
 
-  for(int i = cur + 1; i <= n; i++) count(i);
   print();
   return 0;
 }
@@ -73,12 +70,4 @@ void print() {
     cout<<result[i];
   }
   cout<<'\n';
-}
-
-void count(int x) {
-  while(x > 0) {
-    result[x % 10]++;
-    x /= 10;
-  }
-  return;
 }
