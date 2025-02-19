@@ -33,11 +33,10 @@ function solution(k, w, h, board) {
     x < w && x >= 0 && y < h && y >= 0 && board[y][x] === 0;
 
   const queue = [[0, 0, 0]];
-  let front = 0;
   visit[0][0][0] = 1;
 
-  while (front < queue.length) {
-    const [x, y, count] = queue[front++];
+  while (queue.length > 0) {
+    const [x, y, count] = queue.shift();
 
     monkey.forEach(([xMove, yMove]) => {
       const nextX = x + xMove;
