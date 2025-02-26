@@ -3,8 +3,7 @@ const [target, search] = fs
   .readFileSync("/dev/stdin")
   .toString()
   .trim()
-  .split("\n")
-  .map((str) => str.split(""));
+  .split("\n");
 
 function solution(target, search) {
   const getPi = () => {
