@@ -8,7 +8,7 @@ const [firstLine, ...arr] = fs
 const [n, m] = firstLine.split(" ").map(Number);
 
 function solution(n, m, arr) {
-  const dp = [];
+  let prev = [];
 
   let max = 0;
   for (let y = 0; y < n; y++) {
@@ -19,18 +19,14 @@ function solution(n, m, arr) {
           ? { x: 0, y: 0 }
           : {
               x: 1 + (row[x - 1]?.x || 0),
-              y: 1 + (dp[y - 1]?.[x]?.y || 0),
+              y: 1 + (prev[x]?.y || 0),
             };
-      const square = Math.min(
-        cell.x,
-        cell.y,
-        (dp[y - 1]?.[x - 1]?.square || 0) + 1
-      );
+      const square = Math.min(cell.x, cell.y, (prev[x - 1]?.square || 0) + 1);
       max = square < max ? max : square;
       cell.square = square;
       row.push(cell);
     }
-    dp.push(row);
+    prev = row;
   }
   return max ** 2;
 }
